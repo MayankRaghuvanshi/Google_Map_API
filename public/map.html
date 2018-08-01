@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        .heading{
+            font-family:Arial;
+            text-align: center;
+        }
+        #map {
+            height: 500px;
+            width: 100%;
+            border: 1px solid;
+            border-style:dashed;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body >
+
+<h2 class="heading">GOOGLE MAP API</h2>
+<div id="map" ></div>
+<script>
+     function initMap() {
+     //initialize google map and add the center location
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom: 16, center: {lat: 28.719751 , lng:77.066027 }})
+
+        function addMarker(loc) {
+            var marker = new google.maps.Marker({
+                position:loc,map:map
+            })
+        }
+        addMarker({lat: 28.719751 , lng:77.066027 })
+        addMarker({lat:28.722811, lng:77.067937})
+        addMarker({lat:28.722771,lng:77.067219})
+}
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDa72ufK0iRLwvcdSCsmg4ZcWJsCeD4ksg&callback=initMap">
+</script>
+</body>
+</html>
